@@ -29,7 +29,6 @@ export interface IOptions {
 	theme?: ITheme
 	icons?: IIcons
 	datepickerClassNames?: string
-	defaultDate?: Date
 	language?: string
 	weekDays?: string[]
 	disabledDates?: Date[]
@@ -54,7 +53,6 @@ const options: IOptions = {
 		selected: "",
 	},
 	datepickerClassNames: "",
-	defaultDate: new Date(),
 	language: "en",
 	weekDays: ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
 	inputNameProp: "date",

@@ -6,18 +6,18 @@ import DatePickerPopup from "./DatePickerPopup"
 import DatePickerProvider, { DatePickerContext } from "./DatePickerProvider"
 
 export interface IDatePickerProps {
-	children?: ReactElement | ReactNode
+	children?: ReactElement
 	options?: IOptions
+	value?: Date,
 	onChange?: (date: Date) => void
 	show: boolean
 	setShow: (show: boolean) => void
 	classNames?: string
-	selectedDateState?: [Date, (date: Date) => void]
 }
 
-const DatePicker = ({ children, options, onChange, classNames, show, setShow, selectedDateState }: IDatePickerProps) => (
+const DatePicker = ({ children, options, onChange, classNames, show, setShow, value }: IDatePickerProps) => (
 	<div className={twMerge("w-full", classNames)}>
-		<DatePickerProvider options={options} onChange={onChange} show={show} setShow={setShow} selectedDateState={selectedDateState}>
+		<DatePickerProvider options={options} value={value} onChange={onChange} show={show} setShow={setShow} >
 			<DatePickerMain options={options}>{children}</DatePickerMain>
 		</DatePickerProvider>
 	</div>
@@ -74,7 +74,7 @@ const Input = forwardRef<HTMLInputElement, { nameProp?: string }>((props, ref) =
 				options?.theme?.input
 			)}
 			placeholder="Select Date"
-			value={selectedDate && showSelectedDate ? getFormattedDate(selectedDate) : ""}
+			value={selectedDate && (showSelectedDate ? getFormattedDate(selectedDate) : "")}
 			onFocus={() => setShow(true)}
 			readOnly
 		/>
