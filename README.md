@@ -73,7 +73,7 @@ const options = {
 		next: () => <span>Next</span>,
 	},
 	datepickerClassNames: "top-12",
-	defaultDate: new Date("2022-01-01"),
+	value: new Date("2022-01-01"),
 	language: "en",
 }
 
@@ -121,7 +121,7 @@ const options = {
 		next: () => <span>Next</span>,
 	},
 	datepickerClassNames: "top-12",
-	defaultDate: new Date("2022-01-01"),
+	value: new Date("2022-01-01"),
 	language: "en",
 }
 
@@ -173,7 +173,7 @@ const DemoComponent = () => {
 - theme?: [ITheme](###ITheme) - Default: `As seen on demo page`
 - icons?: [IIcons](###IIcons) - Default: `As seen on demo page`
 - datepickerClassNames?: string - Default: `""`
-- defaultDate?: Date - Default: `new Date()`
+- value?: Date - Default: `undefined`
 - language?: string - Default: `en`
 - disabledDates?: Date[] - Default: `[]`
 - weekDays?: string[] - Default: `["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"]`
