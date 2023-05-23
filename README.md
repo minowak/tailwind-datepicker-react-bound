@@ -16,11 +16,11 @@ Date logic from [VanillaJS-datepicker](https://github.com/mymth/vanillajs-datepi
 1. Install the package
 
 ```bash
-npm install tailwind-datepicker-react
+npm install tailwind-datepicker-react-bound
 ```
 
 ```bash
-yarn add tailwind-datepicker-react
+yarn add tailwind-datepicker-react-bound
 ```
 
 2. Add the styles to your `tailwind.config.js` file
