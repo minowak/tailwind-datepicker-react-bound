@@ -11,9 +11,8 @@ import Years from "./Views/Years";
 const DatePickerPopup = forwardRef<HTMLDivElement>((_props, ref: ForwardedRef<HTMLDivElement>) => {
   const { selectedDate, view, options } = useContext(DatePickerContext);
 
-  const firstOfMonth = selectedDate && firstDateOfMonth(selectedDate?.getFullYear(), selectedDate?.getMonth(), 1);
-  const start = firstOfMonth && dayOfTheWeekOf(firstOfMonth, 1, 1);
-
+  const firstOfMonth = firstDateOfMonth(selectedDate?.getFullYear() || new Date().getFullYear(), selectedDate !== undefined ? selectedDate.getMonth() : new Date().getMonth(), 1);
+  const start = dayOfTheWeekOf(firstOfMonth, 1, 1);
   return (
     <>
       {start && (
