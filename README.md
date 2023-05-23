@@ -1,5 +1,5 @@
-[![NPM Version](https://img.shields.io/npm/v/tailwind-datepicker-react?color=green)](https://www.npmjs.com/package/tailwind-datepicker-react-bound)
-[![NPM Minified Size](https://img.shields.io/bundlephobia/min/tailwind-datepicker-react)](https://www.npmjs.com/package/tailwind-datepicker-react-bound)
+[![NPM Version](https://img.shields.io/npm/v/tailwind-datepicker-react-bound?color=green)](https://www.npmjs.com/package/tailwind-datepicker-react-bound)
+[![NPM Minified Size](https://img.shields.io/bundlephobia/min/tailwind-datepicker-react-bound)](https://www.npmjs.com/package/tailwind-datepicker-react-bound)
 
 # Tailwind-datepicker-react
 
