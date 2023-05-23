@@ -13,8 +13,6 @@ interface IDatePickerContext {
 	changeSelectedDate: (action: "prev" | "next" | "date" | "today", date: Date) => void
 	showSelectedDate: boolean
 	setShowSelectedDate: Dispatch<SetStateAction<boolean>>
-	selectedMonth: number
-	selectedYear: number
 	getFormattedDate: (date: Date | number, formatOptions?: Intl.DateTimeFormatOptions) => string
 }
 
@@ -30,8 +28,6 @@ export const DatePickerContext = createContext<IDatePickerContext>({
 	changeSelectedDate: () => {},
 	showSelectedDate: true,
 	setShowSelectedDate: () => {},
-	selectedMonth: new Date().getMonth(),
-	selectedYear: new Date().getFullYear(),
 	getFormattedDate: () => "",
 })
 
@@ -49,8 +45,7 @@ const DatePickerProvider = ({ children, options: customOptions, value, onChange,
 	const [view, setView] = useState<Views>("days")
 	const [selectedDate, setSelectedDate] = useState(value)
 	const [showSelectedDate, setShowSelectedDate] = useState<boolean>(true)
-	const selectedMonth = selectedDate?.getMonth() || new Date().getMonth()
-	const selectedYear = selectedDate?.getFullYear() || new Date().getFullYear()
+
 
 	const changeSelectedDate = (action: "prev" | "next" | "date" | "today", date: Date) => {
 		if (options?.maxDate && date > options.maxDate) return
@@ -66,7 +61,7 @@ const DatePickerProvider = ({ children, options: customOptions, value, onChange,
 
 	return (
 		<DatePickerContext.Provider
-			value={{ options, view, setView, show, setShow, selectedDate, changeSelectedDate, showSelectedDate, setShowSelectedDate, selectedMonth, selectedYear, getFormattedDate }}
+			value={{ options, view, setView, show, setShow, selectedDate, changeSelectedDate, showSelectedDate, setShowSelectedDate, getFormattedDate }}
 		>
 			{children}
 		</DatePickerContext.Provider>

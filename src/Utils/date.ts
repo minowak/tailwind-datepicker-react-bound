@@ -8,7 +8,8 @@ export const firstDateOfMonth = (selectedYear: number, selectedMonth: number, da
 
 export const addDays = (date: number, amount: number): number => {
 	const newDate = new Date(date)
-	return newDate.setDate(newDate.getDate() + amount)
+	const nd = newDate.setDate(newDate.getDate() + amount)
+	return nd
 }
 
 export const dayDiff = (day: number, from: number): number => {
